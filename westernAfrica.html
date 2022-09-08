@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>
+        The Western Africa
+    </title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <meta name="description" content="The African Real Encyclopedia transform the way you see africa or the way you think it, Africa is now the fast growing economy with the youngest and dynamic population, It is has never been a good time to invest in Africa like now "
+    />
+    <meta name="twitter:card" content="summary_large_image">
+
+
+    <meta property="og:title" content="Today Know Africa as it is">
+    <meta property="og:url" content="//knowMyAfrica.com/">
+    <meta property="og:description" content="The African Real Encyclopedia transform the way you see africa or the way you think it, Africa is now the fast growing economy with the youngest and dynamiic population, It is has never been a good time to invest in Africa like now .">
+    <meta property="og:image" content="images/800px-Blank_Map-Africa">
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" media="all">
+
+
+    <link href="https://storage.googleapis.com/cms-storage-bucket/main.9eca67372c015b5fe5a2.css" rel="stylesheet" media="all">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js"></script>
+
+
+
+    <link rel="shortcut icon" href="images/favicon-32x32.png" />
+
+    <script async defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-replace-svg="nest"></script>
+</head>
+
+<body class="home" x-data="ScrollSpy" x-on:scroll.window="onScroll" x-bind:class="{ 'in-content': $store.spy.inContent }">
+
+
+
+
+
+    <header role="banner" x-data="Header()" x-bind:class="{
+    'hide': $store.spy.inHomeHero,
+    'mobile': isMobile, 
+    'mobile-nav-open': navOpen, 
+    'searching': searchActive,
+  }" x-on:resize.window.debounce.200="onResize">
+
+        <div class="content">
+            <div>
+                <div class="logo logo-white">
+                    <a href="logo.html">
+                        <img src="images/logoRn.jpg" alt="Africa">
+                    </a>
+                </div>
+                <div class="logo logo-normal">
+                    <a href="logo.html">
+                        <img src="images/logoRn.jpg" alt="Africa">
+                    </a>
+                </div>
+            </div>
+            <div class="tray">
+
+                <nav role="navigation">
+                    <ul>
+                        <li>
+                            <a href="home.html" class="btn top-level" @click="handleMobileClick($event)">
+              Home<i class="fas fa-caret-down"></i>
+            </a>
+                            <div class="dd-connector"></div>
+                            <div class="dd">
+                                <ul>
+                                    <li><a class="btn" href="home.html" target="_blank">Home</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="news.html" class="btn top-level" @click="handleMobileClick($event)">
+              News<i class="fas fa-caret-down"></i>
+            </a>
+                            <div class="dd-connector"></div>
+                            <div class="dd">
+                                <ul>
+                                    <li><a class="btn" href="news.html" target="_blank">News</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+
+                            <a href="" class="btn top-level" @click="handleMobileClick($event)">
+              Exploring-Africa <i class="fas fa-caret-down"></i>
+            </a>
+                            <div class="dd-connector"></div>
+                            <div class="dd">
+                                <ul>
+                                    <li><a class="btn" href="index.html">Home</a></li>
+
+                                    <li><a class="btn" href="northernAfrica.html">Northern Africa</a></li>
+                                    <li><a class="btn" href="easternAfrica.html">Eastern Africa</a></li>
+                                    <li><a class="btn" href="centralAfrica.html">Central Africa</a></li>
+                                    <li><a class="btn" href="southernAfrica.html">Southern Africa</a></li>
+                                    <li class="mobile-only">
+                                        <a class="btn" href="/Exploring"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="projects.html" class="btn top-level" @click="handleMobileClick($event)">
+              The Future Project <i class="fas fa-caret-down"></i>
+            </a>
+                            <div class="dd-connector"></div>
+                            <div class="dd">
+                                <ul>
+                                    <li><a class="btn" href="projects.html" target="_blank">The Future Project</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="invest.html" class="btn top-level" @click="handleMobileClick($event)">
+              Invest in Africa<i class="fas fa-caret-down"></i>
+            </a>
+                            <div class="dd-connector"></div>
+                            <div class="dd">
+                                <ul>
+                                    <li><a class="btn" href="invest.html" target="_blank">Invest In Africa</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="visitAfrica.html" class="btn top-level" @click="handleMobileClick($event)">
+              Visit Africa<i class="fas fa-caret-down"></i>
+            </a>
+                            <div class="dd-connector"></div>
+                            <div class="dd">
+                                <ul>
+                                    <li><a class="btn" href="visitAfrica.html" target="_blank">Visit Africa</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+                </nav>
+
+                <div class="icon-btn search" x-bind:class="{ 'active': searchActive || navOpen }">
+                    <i class="fas fa-search search-icon" @click="toggleSearch($event)">
+        </i>
+                    <form action="index.html">
+                        <input type="search" placeholder="Search..." aria-label="Search" name="q" id="q" autocomplete="on">
+                    </form>
+                    <i class="fas fa-times" @click="toggleSearch($event)" x-show="searchActive">
+        </i>
+                </div>
+                <div class="icon-btn hamburger" x-show="!navOpen" @click="toggleMobileNav">
+                    <i class="fas fa-bars fa-lg" aria-hidden="true"></i>
+                </div>
+                <div class="icon-btn close" x-show="navOpen" @click="toggleMobileNav">
+                    <i class="fas fa-times fa-lg"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+
+
+
+
+
+
+
+
+        <section class="content-container" x-data="initSpy(headerOffset, toggleContentActive)">
+
+
+
+            <section id="notification" class="module">
+                <div class="notification container">
+                    <div class="notification-message">
+                        Welcome To Western Africa<br>Explore it as it is.
+                    </div>
+                </div>
+            </section>
+            <section id="tabs" class="module" x-data="initSpy(-300)">
+                <div class="tabs container" x-data="Tabs">
+                    <div class="tabs-header">
+                        <h2>The Most Vibrant Part of Africa,Where Entertainment meets Billionaires.<br>Where Infrastructures and Oil Are Found.<br>Once Used To be The Gate of no Return,now It is The Future of The Continent With it's Population,It's Start
+                            Ups and It's Oil.
+                            <br> When You Get There You Will Appreciate Their Unique Traditional Culture and The Food From The Sea.</h2>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <section>
+                <section id="featured">
+                    <div class="features container">
+                        <div class="feature nospy">
+                            <div class="text">
+                                <hgroup>
+                                    <h4 class="eyebrow text-blue">Ivory Coast</h4><br>
+                                    <h3>Capital City:Yamoussoukro</h3>
+                                </hgroup><br>
+                                <p>The 2nd Highest growing Economy in Africa And 4th In The World.<br> The Country is Rich in Cocoa and Coffee and is The Largest Exporter of Cocoa Bean in The World.<br><br>
+                                </p>
+
+                            </div>
+                            <div class="media">
+                                <img alt="Northern Africa" src="images/Abidjan2.jpg">
+                            </div>
+                        </div>
+
+                        <section>
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container">
+
+                                <!-- Full-width images with number and caption text -->
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/abidjan0.jpg" style="width:100%">
+                                    <div class="text">Abidjan</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/Abidjan1.jpg" style="width:100%">
+                                    <div class="text">Abidjan</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/Abidjan.jpg" style="width:100%">
+                                    <div class="text">Abidjan</div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/yamoussoukro1.jpg" style="width:100%">
+                                    <div class="text">Yamoussoukro</div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/mancoted'ivoire.jpg" style="width:100%">
+                                    <div class="text">Man Cote D'Ivoire</div>
+                                </div>
+
+                                <!-- Next and previous buttons -->
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            </div>
+                            <br>
+
+                            <!-- The dots/circles -->
+                            <div style="text-align:center">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                            </div>
+
+                        </section>
+
+
+                        <div class="feature reverse nospy">
+                            <div class="text">
+                                <hgroup>
+                                    <h4 class="eyebrow text-green">Nigeria</h4>
+                                    <h3>The Giant of Africa.</h3>
+                                </hgroup>
+                                <p>The Most Populous Country in Africa and Sixth in the World With A Population of more than 215 millions.<br>Lagos is one The Largest Metropolitan Areas in The World.<br>Nigeria is An Emerging Global Power.<br>Nigeria is
+                                    The 12th Largest Producer of Petroleum in The World,It's Export Cars and with The War in Ukraine It is Filling The Market's Gap of Fertiliser.</p>
+
+                            </div>
+                            <div class="media">
+                                <img alt="Eastern Africa" src="images/abuja1.png">
+                            </div>
+                        </div>
+                        <section>
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container">
+
+                                <!-- Full-width images with number and caption text -->
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/abuja.jpg" style="width:100%">
+                                    <div class="text">Abuja</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/lagos-city-nigeria-image.jpg" style="width:100%">
+                                    <div class="text">Lagos</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/lagos.jpg" style="width:100%">
+                                    <div class="text">Lagos</div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/abuja2.jpg" style="width:100%">
+                                    <div class="text">Abuja</div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/Nigeria.jpg" style="width:100%">
+                                    <div class="text">Nigeria</div>
+                                </div>
+
+
+                                <!-- Next and previous buttons -->
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            </div>
+                            <br>
+
+                            <!-- The dots/circles -->
+                            <div style="text-align:center">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                            </div>
+
+                        </section>
+
+                        <div class="feature nospy">
+                            <div class="text">
+                                <hgroup>
+                                    <h4 class="eyebrow text-blue">Ghana</h4>
+                                    <h3>Capital City:Accra.</h3>
+                                </hgroup>
+                                <p>Considered as The Example in Democracy,The Country Enjoy Stability and a well Stuctured healthcare system it would be a good Decision To Invest in Ghana.<br>Ghana Stock Exchange is The 5th Largest in Africa.</p>
+
+                            </div>
+                            <div class="media">
+                                <img alt="Northern Africa" src="images/accra0.jpg">
+                            </div>
+                        </div>
+                        <section>
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container">
+
+                                <!-- Full-width images with number and caption text -->
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/accra1.jpg" style="width:100%">
+                                    <div class="text">Accra</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/accra2.webp" style="width:100%">
+                                    <div class="text">Accra</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/accra3.jpg" style="width:100%">
+                                    <div class="text">Accra</div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/accra4.jpg" style="width:100%">
+                                    <div class="text">Accra</div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/Accra.jpg" style="width:100%">
+                                    <div class="text">Accra Beach</div>
+                                </div>
+
+                                <!-- Next and previous buttons -->
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            </div>
+                            <br>
+
+                            <!-- The dots/circles -->
+                            <div style="text-align:center">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                            </div>
+
+                        </section>
+
+                        <div class="feature reverse nospy">
+                            <div class="text">
+                                <hgroup>
+                                    <h4 class="eyebrow text-green">Senegal</h4>
+                                    <h3>Republic of Senegal.</h3>
+                                </hgroup>
+                                <p>The Country is Rich in Oil,gas,fishing,gold, phosphates and Tourism.<br> The Country Achieved Full Internet Conectivity.<br> The Country is now The African Football Champion.
+                                </p>
+                            </div>
+                            <div class="media">
+                                <img alt="Eastern Africa" src="images/dakar5.jpg">
+                            </div>
+                        </div>
+                        <section>
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container">
+
+                                <!-- Full-width images with number and caption text -->
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/dakar1.jpg" style="width:100%">
+                                    <div class="text">Dakar</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/dakar2.jpg" style="width:100%">
+                                    <div class="text">Dakar</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/dakar3.webp" style="width:100%">
+                                    <div class="text">Dakar</div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/dakar4.jpg" style="width:100%">
+                                    <div class="text">Zimbabwe</div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/dakar0.jpg" style="width:100%">
+                                    <div class="text">Dakar</div>
+                                </div>
+
+                                <!-- Next and previous buttons -->
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            </div>
+                            <br>
+
+                            <!-- The dots/circles -->
+                            <div style="text-align:center">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                            </div>
+
+                        </section>
+
+                        <div class="feature nospy">
+                            <div class="text">
+                                <hgroup>
+                                    <h4 class="eyebrow text-blue">Guinea</h4>
+                                    <h3>Republic of Guinea</h3>
+                                </hgroup>
+                                <p>The Country is The 2nd in Bauxite Production in The World.<br>The Country is Rich in Diamonds and Gold and is a Good Tourist Destination.<br> Now You Can Visit Guinea</p>
+                            </div>
+                            <div class="media">
+                                <img alt="Maputo" src="images/conakry0.jpg">
+                            </div>
+                        </div>
+                        <section>
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container1">
+
+                                <!-- Full-width images with number and caption text -->
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/conakry1.jpg" style="width:100%">
+                                    <div class="text">Sherathon Grand Conakry</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/conakry2.jpg" style="width:100%">
+                                    <div class="text">Island of Los</div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/conakry3.jpg" style="width:100%">
+                                    <div class="text">Kasa Island</div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/conakry4.jpg" style="width:100%">
+                                    <div class="text">Los Island</div>
+                                </div>
+                                <div class="mySlides fade">
+                                    <div class="numbertext"></div>
+                                    <img src="images/conakry5.jpg" style="width:100%">
+                                    <div class="text">Conakry</div>
+                                </div>
+
+                                <!-- Next and previous buttons -->
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            </div>
+                            <br>
+
+                            <!-- The dots/circles -->
+                            <div style="text-align:center">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                            </div>
+
+                        </section>
+
+
+                    </div>
+                </section>
+
+                <br/>
+            </section>
+
+
+
+
+
+        </section>
+
+
+
+
+
+    </main>
+
+
+
+    <footer>
+        <div class="content footer-main">
+            <div>
+
+                <div class="logo logo-normal">
+                    <a href="logo.html">
+                        <img src="images/logoRn.jpg" alt="Africa">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li>About us</li>
+                    <li><a href="https://instagram.com/bel_arthur_" target="_blank">Me</a></li>
+
+                </ul>
+                <ul>
+                    <li>Know More</li>
+                    <li><a href="africanStartUp.html" target="_blank">African StartUps</a></li>
+                    <li><a href="africanStadiums.html" target="_blank">African Stadiums</a></li>
+                    <li><a href="africanMuseums.html" target="_blank">African Museums</a></li>
+                    <li><a href="africanIndustries.html" target="_blank">African Industries</a></li>
+                    <li><a href="africanParks.html" target="_blank">African Parks</a></li>
+                </ul>
+                <ul>
+                    <li>African Region</li>
+                    <li><a href="northernAfrica.html">Northern Africa</a></li>
+                    <li><a href="easternAfrica.html">Eastern Africa</a></li>
+                    <li><a href="centralAfrica.html">Central Africa</a></li>
+                    <li><a href="southernAfrica.html">Southern Africa</a></li>
+                    <li><a href="westernAfrica.html">Western Africa</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content footer-social">
+            <div>
+
+                <a href="https://twitter.com/bel_beau" target="_blank" aria-label="Arthur Twittter">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a href="https://www.instagram.com/bel_beau" target="_blank" aria-label="Bel Arthur Instagram">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+                <a href="tel:+250782010317">+250782010317</a>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+    <script src="https://storage.googleapis.com/cms-storage-bucket/main.733c4141c79970761c51.js"></script>
+
+
+</body>
+
+</html>

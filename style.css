@@ -1,0 +1,276 @@
+.image_container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: min(70vw, 300px);
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+.image_container :before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(271, 76%, 53%);
+    transform: scale(0);
+    transition: all 800ms linear;
+    transform-origin: 0 50%;
+    z-index: 2;
+    opacity: 0.3;
+}
+
+.image_container:hover:before {
+    transform: scale(1);
+}
+
+span {
+    position: absolute;
+    color: #fff;
+    opacity: 0;
+    transition: all 800ms linear;
+    z-index: 3;
+}
+
+.title {
+    font-size: 2rem;
+    left: 25%;
+    top: 50%;
+}
+
+.description {
+    font-size: 1rem;
+    left: 25%;
+    top: 65%;
+    width: 50%;
+}
+
+.image_container:hover span {
+    opacity: 1;
+}
+
+.line {
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: #fff;
+    transition: all 800ms linear;
+}
+
+.top {
+    width: 3px;
+    height: 0;
+    left: 20%;
+}
+
+.row {
+    display: flex;
+    height: 88%;
+    align-items: center;
+}
+
+.col {
+    flex-basis: 50%;
+}
+
+
+/* The navigation bar */
+
+.navbar {
+    overflow: hidden;
+    background-color: rgb(15, 1, 1);
+    position: fixed;
+    /* Set the navbar to fixed position */
+    top: 0;
+    /* Position the navbar at the top of the page */
+    width: 100%;
+    /* Full width */
+}
+
+
+/* Links inside the navbar */
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+/* Change background on mouse-over */
+
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+}
+
+
+/* Main content */
+
+.main {
+    margin-top: 30px;
+    /* Add a top margin to avoid content overlay */
+}
+
+.typewriter h1 {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid blue;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+
+/* The typing effect */
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+
+/* The typewriter cursor effect */
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent
+    }
+    50% {
+        border-color: blue;
+    }
+}
+
+
+/* Slideshow container */
+
+
+/*.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+
+/* Hide the images by default 
+
+.mySlides {
+    display: none;
+}
+
+
+/* Next & previous buttons 
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+
+/* Position the "next button" to the right 
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through 
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Caption text 
+
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Number text (1/3 etc)
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+/* The dots/bullets/indicators 
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+
+/* Fading animation
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade1 {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}*/

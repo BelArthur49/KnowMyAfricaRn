@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>
+
+
+
+
+
+
+        KnowMyAfricaRn
+
+    </title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <meta name="description" content="The African Real Encyclopedia transform the way you see africa or the way you think it, Africa is now the fast growing economy with the youngest and dynamic population, It is has never been a good time to invest in Africa like now "
+    />
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta property="og:title" content="Today Know Africa as it is">
+    <meta property="og:url" content="//knowMyAfrica.com/">
+    <meta property="og:description" content="The African Real Encyclopedia transform the way you see africa or the way you think it, Africa is now the fast growing economy with the youngest and dynamiic population, It is has never been a good time to invest in Africa like now .">
+    <meta property="og:image" content="images/800px-Blank_Map-Africa">
+
+
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" media="all">
+
+
+    <link href="https://storage.googleapis.com/cms-storage-bucket/main.9eca67372c015b5fe5a2.css" rel="stylesheet" media="all">
+
+    <link rel="stylesheet" href="style.css">
+
+
+
+    <link rel="shortcut icon" href="images/favicon-32x32.png" />
+
+
+    <script async defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-replace-svg="nest"></script>
+</head>
+
+<body class="home" x-data="ScrollSpy" x-on:scroll.window="onScroll" x-bind:class="{ 'in-content': $store.spy.inContent }">
+
+
+
+
+
+    <header role="banner" x-data="Header()" x-bind:class="{
+    'hide': $store.spy.inHomeHero,
+    'mobile': isMobile, 
+    'mobile-nav-open': navOpen, 
+    'searching': searchActive,
+  }" x-on:resize.window.debounce.200="onResize">
+
+        <div class="content">
+            <div>
+                <div class="logo logo-white">
+                    <a href="logo.html">
+                        <img src="images/logoRn.jpg" alt="Africa">
+                    </a>
+                </div>
+                <div class="logo logo-normal">
+                    <a href="logo.html">
+                        <img src="images/logoRn.jpg" alt="Africa">
+                    </a>
+                </div>
+            </div>
+            <div class="tray">
+
+                <nav role="navigation">
+                    <ul>
+                        <li>
+                            <a href="" class="btn top-level" @click="handleMobileClick($event)">
+              Exploring-Africa <i class="fas fa-caret-down"></i>
+            </a>
+                            <div class="dd-connector"></div>
+                            <div class="dd">
+                                <ul>
+                                    <li><a class="btn" href="northernAfrica.html">Northern Africa</a></li>
+                                    <li><a class="btn" href="easternAfrica.html">Eastern Africa</a></li>
+                                    <li><a class="btn" href="centralAfrica.html">Central Africa</a></li>
+                                    <li><a class="btn" href="southernAfrica.html">Southern Africa</a></li>
+                                    <li><a class="btn" href="westernAfrica.html">Western Africa</a></li>
+                                    <li class="mobile-only">
+                                        <a class="btn" href="/Exploring"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="news.html" class="btn top-level" @click="handleMobileClick($event)">
+              News<i class="fas fa-caret-down"></i>
+            </a>
+                            <div class="dd-connector"></div>
+                            <div class="dd">
+                                <ul>
+                                    <li><a class="btn" href="news.html" target="_blank">News</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="projects.html" class="btn top-level" @click="handleMobileClick($event)">
+              The Future Project <i class="fas fa-caret-down"></i>
+            </a>
+                            <div class="dd-connector"></div>
+                            <div class="dd">
+                                <ul>
+                                    <li><a class="btn" href="projects.html" target="_blank">The Future Project</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="invest.html" class="btn top-level" @click="handleMobileClick($event)">
+              Invest in Africa<i class="fas fa-caret-down"></i>
+            </a>
+                            <div class="dd-connector"></div>
+                            <div class="dd">
+                                <ul>
+                                    <li><a class="btn" href="invest.html" target="_blank">Invest In Africa</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="visitAfrica.html" class="btn top-level" @click="handleMobileClick($event)">
+              Visit Africa<i class="fas fa-caret-down"></i>
+            </a>
+                            <div class="dd-connector"></div>
+                            <div class="dd">
+                                <ul>
+                                    <li><a class="btn" href="visitAfrica.html" target="_blank">Visit Africa</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+                </nav>
+
+                <div class="icon-btn search" x-bind:class="{ 'active': searchActive || navOpen }">
+                    <i class="fas fa-search search-icon" @click="toggleSearch($event)">
+        </i>
+                    <form action="home.html">
+                        <input type="search" placeholder="Search..." aria-label="Search" name="q" id="q" autocomplete="on">
+                    </form>
+                    <i class="fas fa-times" @click="toggleSearch($event)" x-show="searchActive">
+        </i>
+                </div>
+                <div class="icon-btn hamburger" x-show="!navOpen" @click="toggleMobileNav">
+                    <i class="fas fa-bars fa-lg" aria-hidden="true"></i>
+                </div>
+                <div class="icon-btn close" x-show="navOpen" @click="toggleMobileNav">
+                    <i class="fas fa-times fa-lg"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+
+
+
+
+
+        <section class="hero" x-data="initSpy(86, hideShowHeaderHome)">
+
+            <div class="container">
+                <h1> Know My Africa Right Now</h1>
+                <h2>Black Not Dark</h2>
+                <div class="gallery">
+                    <div class="inner-fixed">
+                        <div class="col col-outer col-left">
+                            <div class="card card-a" style="background-image:url(images/aerial_view_of_kigali_city_the_capital_city_of_rwanda.webp)">
+                            </div>
+                            <div class="card card-b" style="background-image:url(images/alexandria.webp)">
+                            </div>
+                            <div class="card card-c" style="background-image:url(images/Congo.-Photo-iStock.jpg)">
+                            </div>
+                        </div>
+                        <div class="col col-center">
+                            <div class="card card-a" style="background-image:url(images/Egypt-Sphinx-Giza-pyramids.-Photo-Pius-Lee.jpg)">
+                            </div>
+                        </div>
+                        <div class="col col-outer col-right">
+                            <div class="card card-a" style="background-image:url(images/luanda.jpg)">
+                            </div>
+                            <div class="card card-b" style="background-image:url(images/helderberg-mountains_western-cape_south-africa.webp)">
+                            </div>
+                            <div class="card card-c" style="background-image:url(images/south-africa-cape-town.jpg)">
+                            </div>
+                            <div class="card card-d" style="background-image:url(images/rocky-bay-resorts_park-rynie_south-africa.webp)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2>"We Transform the Way You See Africa and The Way You Think About it, Africa is Now the Fastest Growing Economy with the Youngest and Dynamic Population, It is has never been a good time to invest, To Live and to visit Africa like now "
+                </h2>
+
+            </div>
+        </section>
+
+
+        <section class="content-container" x-data="initSpy(headerOffset, toggleContentActive)">
+
+
+
+
+
+
+
+            <section id="tabs" class="module" x-data="initSpy(-300)">
+                <div class="tabs container" x-data="Tabs">
+                    <div class="tabs-header">
+                        <h2>Know My Africa Right Now is an Ongoing Project Showing The Real Image of Africa, The Real Wealth and the Real identity of Africans.</h2>
+                        <div class="tabs-menu">
+                            <ul x-ref="tabs">
+                                <li class="btn" @click="selectTab($event, 'a')">Invest</li>
+                                <li class="btn" @click="selectTab($event, 'b')">StartUps</li>
+                                <li class="btn" @click="selectTab($event, 'c')">Projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tabs-content" x-ref="contents">
+                        <div class="tab-content" x-ref="a">
+                            <div class="gallery">
+                                <img src="images/2d337876228c9c776931aaae456912bc.gif" alt="Invest">
+
+                            </div>
+                            <div class="text">
+                                <h3 class="text-green">Invest</h3>
+                                <p>Foreign direct investment (FDI) to African countries hit a record $83 billion in 2021, according to UNCTAD's World Investment Report 2022 published on 9 June.<br>The United Nations report disclosed that Africa recorded
+                                    11.4% growth in foreign investment returns between 2006 and 2011. <br>And now is the best time to invest here.
+                                </p>
+                                <a class="btn" href="invest.html" target="_blank">Explore</a>
+                            </div>
+                        </div>
+                        <div class="tab-content" x-ref="b">
+                            <div class="gallery">
+                                <img src="images/ccb_communityhero_6042020_powering_the_digital_economy.png" alt="StartUps">
+
+                            </div>
+                            <div class="text">
+                                <h3 class="text-blue">StartUps</h3>
+                                <p>Africa is Home to 618 Tech Hubs.<br> Lagos,Cape Town,Nairobi belongs to tier One with 20 to 40 hubs each.<br> Casablanca,Accra,Tunis belongs to tier Two with more than 15 hubs each.<br> Dakar,Bamako,Kampala,Lome,Dar es
+                                    Salama are emerging cities.
+                                </p>
+                                <a class="btn" href="africanStartUp.html" target="_blank">Explore</a>
+                            </div>
+                        </div>
+                        <div class="tab-content" x-ref="c">
+                            <div class="gallery">
+                                <img src="images/egypt-new-capital.jpg" alt="Invest">
+
+                            </div>
+                            <div class="text">
+                                <h3 class="text-yellow">Projects</h3>
+                                <p>Africa is the continent of the future!<br> With mega projects in every region of the continent,you can not Dream to be Anywhere Else in The Future But in Africa.
+                                </p>
+                                <a class="btn" href="projects.html" target="_blank">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><br>
+
+
+            <section>
+                <section id="featured">
+                    <div class="features container">
+                        <div class="feature nospy">
+                            <div class="text">
+                                <hgroup>
+                                    <h4 class="eyebrow text-blue">Northern Africa</h4>
+                                    <h3>Rich in History and in Future</h3>
+                                </hgroup>
+                                <p>It is Fine for Tourism,having Deserts and unique Oasis,It is Rich in History and Shows how The African Continent Was might.</p>
+                                <a class="btn" href="northernAfrica.html">Northern Africa</a>
+                            </div>
+                            <div class="media">
+                                <img alt="Northern Africa" src="images/Alexandria-Egypt.jpg">
+                            </div>
+                        </div>
+                        <div class="feature reverse nospy">
+                            <div class="text">
+                                <hgroup>
+                                    <h4 class="eyebrow text-green">Eastern Africa</h4>
+                                    <h3>Known for it's economic growth and it's fauna</h3>
+                                </hgroup>
+                                <p>Some parts of East Africa have been renowned for their concentrations of wild animals, such as the "big five".<br>It has an Exceptional Economic Growth and It is a StartUp Hub.</p>
+                                <a class="btn" href="easternAfrica.html">Eastern Africa</a>
+                            </div>
+                            <div class="media">
+                                <img alt="Eastern Africa" src="images/Dar-es-Salaam.jpg">
+                            </div>
+                        </div>
+                        <div class="feature nospy">
+                            <div class="text">
+                                <hgroup>
+                                    <h4 class="eyebrow text-blue">Central Africa</h4>
+                                    <h3>Rich in Minerals,Parks and Wise People</h3>
+                                </hgroup>
+                                <p>The World needs Central Africa To Keep Businesses Running.<br>Central Africa Minerals are Used Worldwide in Many Aspects of our Dailylife.<br>The Planet Need The Region Of Central Africa in Order To Survive.
+                                </p>
+                                <a class="btn" href="centralAfrica.html">Central Africa</a>
+                            </div>
+                            <div class="media">
+                                <img alt="Northern Africa" src="images/Libreville_immeubles.jpg">
+                            </div>
+                        </div>
+                        <div class="feature reverse nospy">
+                            <div class="text">
+                                <hgroup>
+                                    <h4 class="eyebrow text-green">Southern Africa</h4>
+                                    <h3>The most Developed part of Africa</h3>
+                                </hgroup>
+                                <p>The Region of Africa with The Most Advanced Infrastructure,Which Show Again That Africa Lack Nothing Whether Advanced Infrastructures or Big Mining Companies.</p>
+                                <a class="btn" href="southernAfrica.html">Southern Africa</a>
+                            </div>
+                            <div class="media">
+                                <img alt="Eastern Africa" src="images/johannesburg01-768x432.jpg">
+                            </div>
+                        </div>
+                        <div class="feature nospy">
+                            <div class="text">
+                                <hgroup>
+                                    <h4 class="eyebrow text-blue">Western Africa</h4>
+                                    <h3>With it's population,it has all kind of Riches</h3>
+                                </hgroup>
+                                <p>TThe Most Vibrant Part of Africa,Where Entertainment meets Billionaires.<br>Once Used To be The Gate of no Return,now It is The Future of The Continent With it's Population,It's StartUps and It's Oil.</p>
+                                <a class="btn" href="westernAfrica.html">Western Africa</a>
+                            </div>
+                            <div class="media">
+                                <img alt="Libreville immeubles" src="images/lagos-city-nigeria-image.jpg">
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <br/>
+            </section>
+
+
+
+
+            <section id="news" class="module carousel-section">
+                <div class="container">
+                    <h2>Know More </h2>
+                </div>
+                <div class="carousel" x-data="Carousel" x-on:resize.window.debounce.300="onResize">
+                    <div class="carousel-slider" x-ref="slider" x-on:scroll="onScroll">
+
+
+                        <div class="carousel-card">
+                            <a href="invetion.html" target="_blank">
+                                <img alt="boat" height="356" src="images/invention1.webp" width="635">
+                                <h4>African Invention</h4>
+
+                                <div class="carousel-card-bg"></div>
+                            </a>
+                        </div>
+
+                        <div class="carousel-card">
+                            <a href="africanStartUp.html">
+                                <img alt="African real news" height="356" src="images/Africa tech.jpg" width="635">
+                                <h4>African StartUps</h4>
+
+                                <div class="carousel-card-bg"></div>
+                            </a>
+                        </div>
+
+                        <div class="carousel-card">
+                            <a href="africanIndustries.html">
+                                <img alt="African Industries" height="254" src="images/kenyan-farmer.jpg" width="635">
+                                <h4>African Industries</h4>
+
+                                <div class="carousel-card-bg"></div>
+                            </a>
+                        </div>
+
+                        <div class="carousel-card">
+                            <a href="africanParks.html" target="_blank">
+                                <img alt="African Parks" height="254" src="images/kilimanjaro.png" width="635">
+                                <h4>African Parks</h4>
+                                <div class="carousel-card-bg"></div>
+                            </a>
+                        </div>
+
+                        <div class="carousel-card">
+                            <a href="africanStadiums.html" target="_blank">
+                                <img alt="sport" height="362" src="images/sport.jpg" width="635">
+                                <h4>Stadiums</h4>
+                                <div class="carousel-card-bg"></div>
+                            </a>
+                        </div>
+                        <div class="carousel-card">
+                            <a href="africanMuseums.html" target="_blank">
+                                <img alt="sport" height="362" src="images/egypt-alexandria-top-attractions-explore-museums-bibliotheca-alexandrina.jpg" width="635">
+                                <h4>Museums</h4>
+                                <div class="carousel-card-bg"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-progress container">
+                        <div class="carousel-track">
+                            <div class="carousel-completed" x-ref="progress"></div>
+                        </div>
+                        <div class="carousel-nav">
+                            <a href="#" class="disabled" x-ref="prevBtn" @click.prevent="navigate($event, 'bwd')">
+                                <i class="far fa-arrow-alt-circle-left fa-2x"></i>
+                            </a>
+                            <a href="#" class="disabled" x-ref="nextBtn" @click.prevent="navigate($event, 'fwd')">
+                                <i class="far fa-arrow-alt-circle-right fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+
+
+
+
+    </main>
+
+
+
+    <footer>
+        <div class="content footer-main">
+            <div>
+
+                <div class="logo logo-normal">
+                    <a href="logo.html">
+                        <img src="images/logoRn.jpg" alt="Africa">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li>About us</li>
+                    <li><a href="https://instagram.com/bel_arthur_" target="_blank">Me</a></li>
+
+                </ul>
+                <ul>
+                    <li>Know More</li>
+                    <li><a href="africanStartUp.html" target="_blank">African StartUps</a></li>
+                    <li><a href="africanStadiums.html" target="_blank">African Stadiums</a></li>
+                    <li><a href="africanMuseums.html" target="_blank">African Museums</a></li>
+                    <li><a href="africanIndustries.html" target="_blank">African Industries</a></li>
+                    <li><a href="africanParks.html" target="_blank">African Parks</a></li>
+                </ul>
+                <ul>
+                    <li>African Region</li>
+                    <li><a href="northernAfrica.html">Northern Africa</a></li>
+                    <li><a href="easternAfrica.html">Eastern Africa</a></li>
+                    <li><a href="centralAfrica.html">Central Africa</a></li>
+                    <li><a href="southernAfrica.html">Southern Africa</a></li>
+                    <li><a href="westernAfrica.html">Western Africa</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content footer-social">
+            <div>
+
+                <a href="https://twitter.com/bel_beau" target="_blank" aria-label="Arthur Twittter">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a href="https://www.instagram.com/bel_beau" target="_blank" aria-label="Bel Arthur Instagram">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+                <a href="tel:+250782010317">+250782010317</a>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+    <script src="https://storage.googleapis.com/cms-storage-bucket/main.733c4141c79970761c51.js"></script>
+
+
+</body>
+
+</html>
