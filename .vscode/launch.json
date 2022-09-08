@@ -8,8 +8,8 @@
         {
             "type": "msedge",
             "request": "launch",
-            "name": "Open home.html",
-            "file": "c:\\Users\\Tita\\Downloads\\programming\\HTML & CSS\\projects\\KnowMyAfrica\\home.html",
+            "name": "Open index.html",
+            "file": "c:\\Users\\Tita\\Downloads\\programming\\HTML & CSS\\projects\\KnowMyAfrica\\index.html",
         }
     ]
 }
